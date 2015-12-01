@@ -1,15 +1,13 @@
 var express = require('express')
 var path = require('path')
-// var favicon = require('serve-favicon')
 var logger = require('morgan')
 var cookieParser = require('cookie-parser')
 var bodyParser = require('body-parser')
-
 var routes = require('./routes/index')
 var users = require('./routes/users')
 var scores = require('./routes/scores')
 var write = require('./routes/write')
-
+var findone = require('./routes/findone')
 var app = express()
 
 // view engine setup
@@ -28,6 +26,7 @@ app.use('/', routes)
 app.use('/users', users)
 app.use('/scores', scores)
 app.use('/write', write)
+app.use('/findone', findone)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
